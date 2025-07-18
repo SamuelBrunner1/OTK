@@ -38,27 +38,28 @@ import 'swiper/css/pagination';
   .swiper-button-next,
   .swiper-button-prev {
     color: #16a34a;
-    width: 40px;
-    height: 40px;
+    width: 50px; /* Größer für Touch */
+    height: 50px; /* Größer für Touch */
     z-index: 10000 !important;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    pointer-events: auto;
   }
 
   .swiper-button-next {
-    right: 1px;
+    right: 10px; /* Mehr Platz */
   }
 
   .swiper-button-prev {
-    left: 1px;
+    left: 10px; /* Mehr Platz */
   }
 
   .swiper-button-next::after,
@@ -69,6 +70,16 @@ import 'swiper/css/pagination';
 
   .swiper-pagination {
     bottom: 10px !important;
+  }
+
+  /* ✅ Mobile Optimierung */
+  @media (max-width: 768px) {
+    .swiper-button-next {
+      right: 5px; /* Etwas näher */
+    }
+    .swiper-button-prev {
+      left: 5px;
+    }
   }
 </style>
 
