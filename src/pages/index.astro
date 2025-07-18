@@ -53,34 +53,84 @@ import SwiperInit from "../components/SwiperInit.astro";
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-4xl font-semibold text-center mb-10">Was unsere Kunden sagen</h2>
         
-        <SwiperInit>
-          <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center">
-            <p class="text-lg italic mb-4">„Super frische Produkte, absolut empfehlenswert!“</p>
-            <span class="block font-semibold">– Max Mustermann</span>
-          </div>
-          <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center">
-            <p class="text-lg italic mb-4">„Schnelle Lieferung und tolle Qualität.“</p>
-            <span class="block font-semibold">– Anna Beispiel</span>
-          </div>
-          <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center">
-            <p class="text-lg italic mb-4">„Endlich echte Bio-Produkte, direkt vom Bauernhof.“</p>
-            <span class="block font-semibold">– Peter Grün</span>
-          </div>
+       <SwiperInit>
+  <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center relative">
+     <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
+    <p class="text-lg italic mb-4">„Super frische Produkte, absolut empfehlenswert!“</p>
+    <span class="block font-semibold">– Max Mustermann</span>
+  </div>
 
-		  <!-- ✅ Neue Bewertungen -->
-  <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center">
+  <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center relative">
+     <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
+    <p class="text-lg italic mb-4">„Schnelle Lieferung und tolle Qualität.“</p>
+    <span class="block font-semibold">– Anna Beispiel</span>
+  </div>
+
+  <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center relative">
+     <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
+    <p class="text-lg italic mb-4">„Endlich echte Bio-Produkte, direkt vom Bauernhof.“</p>
+    <span class="block font-semibold">– Peter Grün</span>
+  </div>
+
+  <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center relative">
+     <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
     <p class="text-lg italic mb-4">„Ich bestelle jede Woche und bin immer begeistert!“</p>
     <span class="block font-semibold">– Lisa Sommer</span>
   </div>
-  <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center">
+
+  <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center relative">
+     <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
     <p class="text-lg italic mb-4">„Regional, bio und super freundlich – 5 Sterne!“</p>
     <span class="block font-semibold">– Thomas Bauer</span>
   </div>
+</SwiperInit>
 
-  
-        </SwiperInit>
       </div>
     </section>
+
+
+	<!-- ================= FAQ SECTION ================= -->
+<section class="max-w-3xl mx-auto py-20 px-6">
+  <h2 class="text-4xl font-semibold text-center mb-10">Häufige Fragen</h2>
+
+  <div class="divide-y divide-gray-200 border border-gray-200 rounded-xl shadow-sm bg-white">
+    
+    <!-- Frage 1 -->
+    <details class="group p-6">
+      <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+        <span>Wie schnell wird geliefert?</span>
+        <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
+      </summary>
+      <p class="mt-4 text-gray-600 leading-relaxed">
+        Wir liefern in der Regel innerhalb von 24 Stunden nach Bestellung, sodass deine Bio-Produkte immer frisch bei dir ankommen.
+      </p>
+    </details>
+
+    <!-- Frage 2 -->
+    <details class="group p-6">
+      <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+        <span>Sind alle Produkte wirklich bio?</span>
+        <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
+      </summary>
+      <p class="mt-4 text-gray-600 leading-relaxed">
+        Ja! Alle Produkte stammen aus zertifizierter biologischer Landwirtschaft und werden von lokalen Bauernhöfen bezogen.
+      </p>
+    </details>
+
+    <!-- Frage 3 -->
+    <details class="group p-6">
+      <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+        <span>Gibt es ein Abonnement?</span>
+        <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
+      </summary>
+      <p class="mt-4 text-gray-600 leading-relaxed">
+        Ja, du kannst ein wöchentliches oder monatliches Abo für deinen Bio-Korb wählen – flexibel und jederzeit kündbar.
+      </p>
+    </details>
+
+  </div>
+</section>
+
 
     <!-- INFO -->
     <section class="py-24 px-8 text-center max-w-5xl mx-auto">
