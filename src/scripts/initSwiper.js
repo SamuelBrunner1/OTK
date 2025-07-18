@@ -8,9 +8,11 @@ export default function initSwiper() {
     loop: true,
     spaceBetween: 40,
     slidesPerView: 1,
+    simulateTouch: true, // Swipe erlaubt
+    allowTouchMove: true, // Mobile Swipe funktioniert
     breakpoints: {
       768: { slidesPerView: 1 },
-      1024: { slidesPerView: 2 }, // Maximal 2 für bessere Lesbarkeit
+      1024: { slidesPerView: 2 }, // Zwei Karten auf großen Screens
     },
     navigation: {
       nextEl: '.swiper-button-next',

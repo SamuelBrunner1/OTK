@@ -4,20 +4,31 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 ---
 
-<div class="swiper relative overflow-hidden">
-  <div class="swiper-wrapper">
-    <slot /> <!-- Slides von der Page -->
-  </div>
-
-  <!-- Navigation -->
+<!-- Container für Swiper + Buttons -->
+<div class="swiper-container relative">
+  <!-- Navigation Buttons -->
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
 
-  <!-- Pagination -->
-  <div class="swiper-pagination"></div>
+  <!-- Swiper selbst -->
+  <div class="swiper relative overflow-hidden">
+    <div class="swiper-wrapper">
+      <slot /> <!-- Slides -->
+    </div>
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
 </div>
 
 <style>
+/* Container */
+.swiper-container {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Swiper Basis */
 .swiper {
   position: relative;
   overflow: hidden;
@@ -39,11 +50,8 @@ import 'swiper/css/pagination';
 .swiper-button-next,
 .swiper-button-prev {
   color: #16a34a;
-  width: 50px; /* Größer für Touch */
-  height: 50px; /* Größer für Touch */
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 55px;
+  height: 55px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -52,40 +60,44 @@ import 'swiper/css/pagination';
   align-items: center;
   cursor: pointer;
 
-  /* ✅ Mobile Fixes */
-  z-index: 99999; /* Ganz oben */
+  /* ✅ Wichtig für Mobile */
+  z-index: 10;
   pointer-events: auto;
-  touch-action: manipulation; /* Verhindert Ghost-Clicks */
-  -webkit-tap-highlight-color: transparent; /* iOS Touch-Highlight entfernen */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  position: absolute; /* Innerhalb Container */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .swiper-button-next {
-  right: 15px; /* Sicherer Abstand */
+  right: 15px;
 }
 
 .swiper-button-prev {
-  left: 15px; /* Sicherer Abstand */
+  left: 15px;
 }
 
 /* Pfeil-Symbol */
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
 }
 
-/* Pagination Styling */
+/* Pagination */
 .swiper-pagination {
   bottom: 10px !important;
 }
 
 .swiper-pagination-bullet {
-  background: #C8E6C9 !important; /* hellgrün inaktiv */
+  background: #C8E6C9 !important;
   opacity: 1 !important;
 }
 
 .swiper-pagination-bullet-active {
-  background: #16a34a !important; /* kräftiges Grün aktiv */
+  background: #16a34a !important;
 }
 
 /* ✅ Extra Mobile-Optimierung */
