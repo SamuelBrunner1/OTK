@@ -4,114 +4,106 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 ---
 
-<!-- Container für Swiper + Buttons -->
-<div class="swiper-container relative">
-  <!-- Navigation Buttons -->
+<div class="swiper relative overflow-hidden">
+  <div class="swiper-wrapper">
+    <slot /> <!-- Slides von der Page -->
+  </div>
+
+  <!-- Navigation -->
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
 
-  <!-- Swiper selbst -->
-  <div class="swiper relative">
-    <div class="swiper-wrapper">
-      <slot /> <!-- Slides -->
-    </div>
-    <!-- Pagination -->
-    <div class="swiper-pagination"></div>
-  </div>
+  <!-- Pagination -->
+  <div class="swiper-pagination"></div>
 </div>
 
 <style>
-/* Container Fix */
-.swiper-container {
-  position: relative;
-  overflow: visible !important; /* ✅ Damit Buttons nicht blockiert werden */
-}
-
-/* Swiper Basis */
-.swiper {
-  position: relative;
-  overflow: hidden;
-  padding: 30px 0;
-}
-
-.swiper-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: auto;
-  height: auto;
-  padding: 20px;
-}
-
-/* Navigation Buttons */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #16a34a;
-  width: 55px;
-  height: 55px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
-  /* ✅ Mobile Fix */
-  z-index: 99999 !important;
-  pointer-events: all !important;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.swiper-button-next {
-  right: 15px;
-}
-
-.swiper-button-prev {
-  left: 15px;
-}
-
-/* Pfeil-Symbol */
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-/* Pagination */
-.swiper-pagination {
-  bottom: 10px !important;
-}
-
-.swiper-pagination-bullet {
-  background: #C8E6C9 !important;
-  opacity: 1 !important;
-}
-
-.swiper-pagination-bullet-active {
-  background: #16a34a !important;
-}
-
-/* ✅ Extra Mobile-Optimierung */
-@media (max-width: 768px) {
-  .swiper-button-next {
-    right: 10px;
+  .swiper {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 0;
   }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 20px;
+  }
+
+  /* ✅ Navigation Buttons */
+  .swiper-button-next,
   .swiper-button-prev {
-    left: 10px;
+    color: #16a34a;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
   }
-}
+
+  .swiper-button-next {
+    right: 12px;
+  }
+
+  .swiper-button-prev {
+    left: 12px;
+  }
+
+  /* Pfeil-Symbol */
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  /* ✅ Hover Effekt */
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: #16a34a;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.4);
+  }
+
+  /* ✅ Mobile Optimierung */
+  @media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  /* ✅ Pagination Styling */
+  .swiper-pagination-bullet {
+    background: #d1d5db; /* Neutral grau */
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    margin: 0 6px !important;
+    transition: background 0.3s ease;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #16a34a; /* Grün für aktive */
+  }
 </style>
 
 <script type="module" client:load>
-  console.log("✅ Lade initSwiper...");
   import initSwiper from '/src/scripts/initSwiper.js';
   initSwiper();
 </script>
