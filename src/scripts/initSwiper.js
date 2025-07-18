@@ -6,13 +6,14 @@ export default function initSwiper() {
   new Swiper('.swiper', {
     modules: [Navigation, Pagination],
     loop: true,
+    allowTouchMove: true,  // ✅ Swipe bleibt aktiv
+    simulateTouch: true,   // ✅ Touch-Gesten erlaubt
+    watchOverflow: true,
     spaceBetween: 40,
     slidesPerView: 1,
-    simulateTouch: true, // Swipe erlaubt
-    allowTouchMove: true, // Mobile Swipe funktioniert
     breakpoints: {
       768: { slidesPerView: 1 },
-      1024: { slidesPerView: 2 }, // Zwei Karten auf großen Screens
+      1024: { slidesPerView: 2 },
     },
     navigation: {
       nextEl: '.swiper-button-next',

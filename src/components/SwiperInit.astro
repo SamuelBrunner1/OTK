@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
   <div class="swiper-button-next"></div>
 
   <!-- Swiper selbst -->
-  <div class="swiper relative overflow-hidden">
+  <div class="swiper relative">
     <div class="swiper-wrapper">
       <slot /> <!-- Slides -->
     </div>
@@ -21,11 +21,10 @@ import 'swiper/css/pagination';
 </div>
 
 <style>
-/* Container */
+/* Container Fix */
 .swiper-container {
   position: relative;
-  max-width: 100%;
-  margin: 0 auto;
+  overflow: visible !important; /* ✅ Damit Buttons nicht blockiert werden */
 }
 
 /* Swiper Basis */
@@ -60,13 +59,13 @@ import 'swiper/css/pagination';
   align-items: center;
   cursor: pointer;
 
-  /* ✅ Wichtig für Mobile */
-  z-index: 10;
-  pointer-events: auto;
+  /* ✅ Mobile Fix */
+  z-index: 99999 !important;
+  pointer-events: all !important;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 
-  position: absolute; /* Innerhalb Container */
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
