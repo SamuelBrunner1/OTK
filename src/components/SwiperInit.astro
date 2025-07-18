@@ -74,9 +74,18 @@ import 'swiper/css/pagination';
   font-weight: bold;
 }
 
-/* Pagination */
+/* Pagination Styling */
 .swiper-pagination {
   bottom: 10px !important;
+}
+
+.swiper-pagination-bullet {
+  background: #C8E6C9 !important; /* hellgrün inaktiv */
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #16a34a !important; /* kräftiges Grün aktiv */
 }
 
 /* ✅ Extra Mobile-Optimierung */
@@ -88,7 +97,6 @@ import 'swiper/css/pagination';
     left: 10px;
   }
 }
-
 </style>
 
 <script type="module" client:load>

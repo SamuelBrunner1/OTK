@@ -6,11 +6,11 @@ export default function initSwiper() {
   new Swiper('.swiper', {
     modules: [Navigation, Pagination],
     loop: true,
-    spaceBetween: 30,
+    spaceBetween: 40,
     slidesPerView: 1,
     breakpoints: {
       768: { slidesPerView: 1 },
-      1024: { slidesPerView: 2 }, // maximal 2 auf großen Screens
+      1024: { slidesPerView: 2 }, // Maximal 2 für bessere Lesbarkeit
     },
     navigation: {
       nextEl: '.swiper-button-next',
@@ -20,6 +20,11 @@ export default function initSwiper() {
       el: '.swiper-pagination',
       clickable: true,
     },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    speed: 700,
   });
   console.log("✅ Swiper erfolgreich initialisiert!");
 }
