@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import SwiperInit from "../components/SwiperInit.astro";
 ---
 
 <html lang="hu">
@@ -12,9 +13,9 @@ import "../styles/global.css";
       body { font-family: 'Inter', sans-serif; }
     </style>
   </head>
+
   <body class="bg-white text-gray-900">
-    
-    <!-- Header -->
+    <!-- HEADER -->
     <header class="fixed top-0 w-full flex justify-between items-center px-12 py-6 bg-[#E8F5E9] border-b border-[#C8E6C9] shadow-sm z-50">
       <div class="text-2xl font-semibold text-gray-900">BioKosár</div>
       <a href="https://shop.biokosar.hu" class="text-base text-gray-900 hover:text-green-700 transition">
@@ -22,60 +23,110 @@ import "../styles/global.css";
       </a>
     </header>
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="h-screen flex flex-col justify-center items-center text-center bg-cover bg-center relative"
       style="background-image: url('/NAPRA_BILD.jpg');">
       <div class="absolute inset-0 bg-white bg-opacity-70 backdrop-blur-sm"></div>
       <div class="relative max-w-2xl px-6">
         <h1 class="text-5xl md:text-7xl font-semibold mb-6">Frisches Bio. Direkt vom Bauernhof.</h1>
-        <p class="text-lg md:text-xl mb-8 font-light text-gray-700">Qualität, die man schmeckt. Bestelle heute – genieße morgen.</p>
+        <p class="text-lg md:text-xl mb-8 font-light text-gray-700">
+          Qualität, die man schmeckt. Bestelle heute – genieße morgen.
+        </p>
         <a href="https://shop.biokosar.hu" class="bg-green-600 text-white px-8 py-4 rounded-lg text-lg hover:bg-green-700 transition">
           Zum Shop
         </a>
       </div>
     </section>
 
-    <!-- Info Section -->
-    <section class="py-24 px-8 text-center max-w-5xl mx-auto">
-      <h2 class="text-4xl font-semibold mb-12">Warum BioKosár?</h2>
-      <div class="grid md:grid-cols-3 gap-12 text-gray-700 text-lg">
-        <div><strong>🌱 Nachhaltig</strong><br />100% Bio-Produkte direkt vom Bauern.</div>
-        <div><strong>🚚 Schnelle Lieferung</strong><br />Frische Produkte bequem bis zu deiner Tür.</div>
-        <div><strong>🤝 Regional</strong><br />Unterstütze lokale Landwirte und die Umwelt.</div>
+    <!-- ÜBER UNS -->
+    <section class="py-20 px-8 max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-semibold mb-6">Über uns</h2>
+      <p class="text-lg leading-8 text-gray-700">
+        BioKosár steht für frische, regionale Bio-Produkte direkt vom Bauernhof. 
+        Unser Ziel ist es, nachhaltige Landwirtschaft zu fördern und gesunde Ernährung für alle zugänglich zu machen. 
+        Mit einer engen Zusammenarbeit lokaler Landwirte bieten wir hochwertige Lebensmittel – ehrlich, frisch und umweltfreundlich.
+      </p>
+    </section>
+
+    <!-- KUNDENBEWERTUNGEN -->
+    <section class="bg-gray-50 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-semibold text-center mb-10">Was unsere Kunden sagen</h2>
+        
+        <SwiperInit>
+          <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center">
+            <p class="text-lg italic mb-4">„Super frische Produkte, absolut empfehlenswert!“</p>
+            <span class="block font-semibold">– Max Mustermann</span>
+          </div>
+          <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center">
+            <p class="text-lg italic mb-4">„Schnelle Lieferung und tolle Qualität.“</p>
+            <span class="block font-semibold">– Anna Beispiel</span>
+          </div>
+          <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center">
+            <p class="text-lg italic mb-4">„Endlich echte Bio-Produkte, direkt vom Bauernhof.“</p>
+            <span class="block font-semibold">– Peter Grün</span>
+          </div>
+
+		  <!-- ✅ Neue Bewertungen -->
+  <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center">
+    <p class="text-lg italic mb-4">„Ich bestelle jede Woche und bin immer begeistert!“</p>
+    <span class="block font-semibold">– Lisa Sommer</span>
+  </div>
+  <div class="swiper-slide bg-white shadow-lg rounded-xl p-6 text-center">
+    <p class="text-lg italic mb-4">„Regional, bio und super freundlich – 5 Sterne!“</p>
+    <span class="block font-semibold">– Thomas Bauer</span>
+  </div>
+
+  
+        </SwiperInit>
       </div>
     </section>
 
- <footer class="bg-gray-50 border-t border-gray-200 text-gray-600 text-sm">
-  <div class="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-4 gap-8">
-    <!-- Über uns -->
-    <div>
-      <h3 class="font-semibold text-gray-800 mb-3">BioKosár</h3>
-      <p>Frische Bio-Produkte direkt vom Bauernhof – einfach online bestellen.</p>
-    </div>
-    <!-- Rechtliches -->
-    <div>
-      <h3 class="font-semibold text-gray-800 mb-3">Rechtliches</h3>
-      <ul>
-        <li><a href="/rechtliches" class="hover:text-green-700">Rechtliches</a></li>
-      </ul>
-    </div>
-    <!-- Kontakt -->
-    <div>
-      <h3 class="font-semibold text-gray-800 mb-3">Kontakt</h3>
-      <p>Email: <a href="mailto:info@biokosar.hu" class="hover:text-green-700">info@biokosar.hu</a></p>
-      <p>Tel: +36 30 123 4567</p>
-    </div>
-    <!-- Shop -->
-    <div>
-      <h3 class="font-semibold text-gray-800 mb-3">Shop</h3>
-      <a href="https://shop.biokosar.hu" class="hover:text-green-700">Zum Shop</a>
-    </div>
-  </div>
-  <div class="text-center text-xs text-gray-400 py-4 border-t border-gray-200">
-    © 2025 BioKosár. Alle Rechte vorbehalten.
-  </div>
-</footer>
+    <!-- INFO -->
+    <section class="py-24 px-8 text-center max-w-5xl mx-auto">
+      <h2 class="text-4xl font-semibold mb-12">Warum BioKosár?</h2>
+      <div class="grid md:grid-cols-3 gap-12 text-gray-700 text-lg">
+        <div>
+          <strong>🌱 Nachhaltig</strong><br />
+          100% Bio-Produkte direkt vom Bauern.
+        </div>
+        <div>
+          <strong>🚚 Schnelle Lieferung</strong><br />
+          Frische Produkte bequem bis zu deiner Tür.
+        </div>
+        <div>
+          <strong>🤝 Regional</strong><br />
+          Unterstütze lokale Landwirte und die Umwelt.
+        </div>
+      </div>
+    </section>
 
-
+    <!-- FOOTER -->
+    <footer class="bg-gray-50 border-t border-gray-200 text-gray-600 text-sm">
+      <div class="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-semibold text-gray-800 mb-3">BioKosár</h3>
+          <p>Frische Bio-Produkte direkt vom Bauernhof – einfach online bestellen.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-800 mb-3">Rechtliches</h3>
+          <ul>
+            <li><a href="/rechtliches" class="hover:text-green-700">Rechtliches</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-800 mb-3">Kontakt</h3>
+          <p>Email: <a href="mailto:info@biokosar.hu" class="hover:text-green-700">info@biokosar.hu</a></p>
+          <p>Tel: +36 30 123 4567</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-800 mb-3">Shop</h3>
+          <a href="https://shop.biokosar.hu" class="hover:text-green-700">Zum Shop</a>
+        </div>
+      </div>
+      <div class="text-center text-xs text-gray-400 py-4 border-t border-gray-200">
+        © 2025 BioKosár. Alle Rechte vorbehalten.
+      </div>
+    </footer>
   </body>
 </html>

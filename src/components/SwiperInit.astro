@@ -1,0 +1,79 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+---
+
+<div class="swiper relative overflow-hidden">
+  <div class="swiper-wrapper">
+    <slot /> <!-- Slides von der Page -->
+  </div>
+
+  <!-- Navigation -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- Pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<style>
+  .swiper {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 0;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 20px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #16a34a;
+    width: 40px;
+    height: 40px;
+    z-index: 10000 !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .swiper-button-next {
+    right: 1px;
+  }
+
+  .swiper-button-prev {
+    left: 1px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .swiper-pagination {
+    bottom: 10px !important;
+  }
+</style>
+
+<script type="module" client:load>
+  console.log("✅ Lade initSwiper...");
+  import initSwiper from '/src/scripts/initSwiper.js';
+  initSwiper();
+</script>
