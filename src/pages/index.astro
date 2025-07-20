@@ -119,8 +119,14 @@ import SwiperInit from "../components/SwiperInit.astro";
 
 <!-- ✅ HERO -->
 <section id="home" 
-  class="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center"
-  style="background: url('/NAPRA_BILD.jpg') center/cover no-repeat;">
+  class="relative h-screen flex flex-col justify-center items-center text-center"
+  style="
+    background-image: url('/NAPRA_BILD.jpg');
+    background-repeat: repeat;
+    background-size: 280px 280px; /* Größe der Kacheln */
+    background-position: center;
+  ">
+
   
   <!-- Overlay -->
   <div class="absolute inset-0 bg-white/80"></div>
