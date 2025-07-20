@@ -3,6 +3,13 @@ import "../styles/global.css";
 import SwiperInit from "../components/SwiperInit.astro";
 ---
 
+<script type="module" client:load>
+  import initMobileMenu from '/src/scripts/mobileMenu.js';
+  initMobileMenu();
+</script>
+
+
+
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
@@ -65,14 +72,15 @@ import SwiperInit from "../components/SwiperInit.astro";
 
 <body class="bg-gray-50 text-gray-800">
 
-<!-- ✅ HEADER -->
-<header class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
+<header class="fixed top-0 w-full bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
     
     <!-- Logo -->
-    <div class="text-2xl font-bold text-gray-900">BioKosár</div>
+    <div class="flex items-center gap-2">
+      <span class="text-2xl font-bold text-gray-900">BioKosár</span>
+    </div>
 
-    <!-- Desktop Nav -->
+    <!-- Navigation (Desktop) -->
     <nav class="hidden md:flex space-x-8 text-gray-700 text-lg font-medium">
       <a href="#home" class="hover:text-green-600 transition">Home</a>
       <a href="#about" class="hover:text-green-600 transition">Über uns</a>
@@ -80,25 +88,29 @@ import SwiperInit from "../components/SwiperInit.astro";
       <a href="#faq" class="hover:text-green-600 transition">FAQ</a>
     </nav>
 
-    <!-- Desktop CTA -->
+    <!-- CTA (Desktop) -->
     <a href="https://shop.biokosar.hu" 
        class="hidden md:inline-block bg-green-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
        Jetzt bestellen
     </a>
 
-    <!-- Mobile Menu -->
-    <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+    <!-- Mobile Menu Button -->
+    <button id="burgerBtn" class="md:hidden p-2 text-gray-700 hover:text-green-600 focus:outline-none">
+      ☰
+    </button>
   </div>
 
-  <!-- ✅ Mobile Menu Content -->
-  <div id="mobile-menu" class="hidden bg-white border-t border-gray-200 flex flex-col text-lg p-4">
-    <a href="#home" class="py-2">Home</a>
-    <a href="#about" class="py-2">Über uns</a>
-    <a href="#shop" class="py-2">Shop</a>
-    <a href="#faq" class="py-2">FAQ</a>
-    <a href="https://shop.biokosar.hu" class="bg-green-600 text-white py-3 px-4 rounded-lg text-center mt-4">Jetzt bestellen</a>
+  <!-- ✅ Mobile Menu -->
+  <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-200">
+    <nav class="flex flex-col items-center py-6 space-y-4 text-gray-700 text-lg font-medium">
+      <a href="#home" class="hover:text-green-600 transition mobile-link">Home</a>
+      <a href="#about" class="hover:text-green-600 transition mobile-link">Über uns</a>
+      <a href="#shop" class="hover:text-green-600 transition mobile-link">Shop</a>
+      <a href="#faq" class="hover:text-green-600 transition mobile-link">FAQ</a>
+    </nav>
   </div>
 </header>
+
 
 <!-- HERO -->
 <section id="home" 
