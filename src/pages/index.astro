@@ -174,14 +174,34 @@ import SwiperInit from "../components/SwiperInit.astro";
   }
 
   .hero-text {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.9); /* Desktop fast undurchsichtig */
     backdrop-filter: blur(8px);
     padding: 30px 40px;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
     display: inline-block;
+    transition: background 0.3s ease;
+  }
+
+  /* ✅ Mobile: Weniger deckend */
+  @media (max-width: 768px) {
+    .hero-text {
+      background: rgba(255, 255, 255, 0.8); /* Deutlich transparenter */
+    }
+  }
+
+  /* ✅ Overlay heller machen für Mobile */
+  .hero-overlay {
+    background: rgba(255, 255, 255, 0.6); /* Standard */
+  }
+
+  @media (max-width: 768px) {
+    .hero-overlay {
+      background: rgba(255, 255, 255, 0.4); /* Weniger Overlay für Mobile */
+    }
   }
 </style>
+
 
 </section>
 
