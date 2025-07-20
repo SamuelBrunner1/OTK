@@ -119,21 +119,14 @@ import SwiperInit from "../components/SwiperInit.astro";
 
 <!-- ✅ HERO -->
 <section id="home" 
-  class="relative h-screen flex flex-col justify-center items-center text-center"
-  style="
-    background-image: url('/NAPRA_BILD.jpg');
-    background-repeat: repeat;
-    background-size: 480px 480px; /* Größe der Kacheln */
-    background-position: center;
-  ">
-
+  class="relative h-screen flex flex-col justify-center items-center text-center hero-pattern">
   
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-white/80"></div>
+  <!-- ✅ Overlay -->
+  <div class="absolute inset-0 bg-white/70"></div>
 
-  <!-- Hero Content -->
+  <!-- ✅ Hero Content -->
   <div class="hero-text relative max-w-2xl px-6 z-10">
-    <h1 class="hero-headline text-5xl md:text-7xl font-extrabold mb-6 text-gray-900">
+    <h1 class="hero-headline text-4xl md:text-7xl font-extrabold mb-6 text-gray-900">
       Frisches Bio.<br />Direkt vom Bauernhof.
     </h1>
     <p class="text-lg md:text-xl mb-8 font-light text-gray-700 leading-relaxed">
@@ -144,6 +137,41 @@ import SwiperInit from "../components/SwiperInit.astro";
       Zum Shop
     </a>
   </div>
+</section>
+
+<!-- ✅ HERO STYLES -->
+<style>
+  .hero-pattern {
+    background-image: url('/NAPRA_BILD.jpg');
+    background-repeat: repeat;
+    background-size: 370px 300px; /* Standard Desktop */
+    background-position: center;
+  }
+
+  /* ✅ Für Tablets */
+  @media (max-width: 1024px) {
+    .hero-pattern {
+      background-size: 150px 150px;
+    }
+  }
+
+  /* ✅ Für Smartphones */
+  @media (max-width: 640px) {
+    .hero-pattern {
+      background-size: 90px 90px;
+    }
+  }
+
+  .hero-text {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+  }
+</style>
+
 </section>
 
 <!-- ✅ ÜBER UNS -->
