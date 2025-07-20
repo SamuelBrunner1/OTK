@@ -75,36 +75,40 @@ import SwiperInit from "../components/SwiperInit.astro";
 
 <body class="bg-gray-50 text-gray-800">
 
-<!-- ✅ Header -->
-<header class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
+<!-- ✅ HEADER -->
+<!-- ✅ HEADER -->
+<header class="fixed top-0 w-full bg-gradient-to-r from-green-100 to-white backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
     
-    <!-- Logo -->
-    <div class="flex items-center gap-2">
+    <!-- ✅ Logo -->
+    <a href="#home" class="flex items-center gap-2">
       <span class="text-2xl font-bold text-gray-900">BioKosár</span>
-    </div>
+    </a>
 
-    <!-- Navigation (Desktop) -->
+    <!-- ✅ Navigation (Desktop) -->
     <nav class="hidden md:flex space-x-8 text-gray-700 text-lg font-medium">
-      <a href="#home" class="hover:text-green-600 transition">Home</a>
-      <a href="#about" class="hover:text-green-600 transition">Über uns</a>
-      <a href="#faq" class="hover:text-green-600 transition">FAQ</a>
+      <a href="#home" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">Home</a>
+      <a href="#about" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">Über uns</a>
+      <a href="#faq" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">FAQ</a>
     </nav>
 
-    <!-- CTA (Desktop) -->
+    <!-- ✅ CTA (Desktop) -->
     <a href="https://shop.biokosar.hu" 
        class="hidden md:inline-block bg-green-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
        Jetzt bestellen
     </a>
 
-    <!-- Burger Button -->
-    <button id="burgerBtn" class="md:hidden p-2 text-gray-700 hover:text-green-600 focus:outline-none text-2xl">
-      ☰
+    <!-- ✅ Burger Button (Mobile) -->
+    <button id="burgerBtn" class="md:hidden p-2 text-gray-700 hover:text-green-600 focus:outline-none">
+      <!-- SVG Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
     </button>
   </div>
 
   <!-- ✅ Mobile Menu -->
-  <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-200 z-50">
+  <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-200 z-50 transform transition-all duration-300 ease-in-out">
     <nav class="flex flex-col items-center py-6 space-y-4 text-gray-700 text-lg font-medium">
       <a href="#home" class="hover:text-green-600 transition mobile-link">Home</a>
       <a href="#about" class="hover:text-green-600 transition mobile-link">Über uns</a>
@@ -112,6 +116,14 @@ import SwiperInit from "../components/SwiperInit.astro";
     </nav>
   </div>
 </header>
+
+<!-- ✅ Overlay -->
+<div id="menuOverlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40"></div>
+
+
+<!-- ✅ Overlay -->
+<div id="menuOverlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40"></div>
+
 
 <!-- ✅ Overlay -->
 <div id="menuOverlay"></div>
