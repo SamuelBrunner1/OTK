@@ -29,14 +29,15 @@ import SwiperInit from "../components/SwiperInit.astro";
     [data-animate].visible { opacity: 1; transform: translateY(0); }
 
     /* Hero Styling */
-    .hero-text {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(10px);
-      padding: 30px 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-      display: inline-block;
-    }
+ .hero-text {
+  background: rgba(255, 255, 255, 0.6); /* Weniger Deckkraft */
+  backdrop-filter: blur(8px); /* Leichter Blur bleibt für Lesbarkeit */
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+}
+
 
     /* Sticky CTA */
     .sticky-cta {
@@ -87,7 +88,6 @@ import SwiperInit from "../components/SwiperInit.astro";
     <nav class="hidden md:flex space-x-8 text-gray-700 text-lg font-medium">
       <a href="#home" class="hover:text-green-600 transition">Home</a>
       <a href="#about" class="hover:text-green-600 transition">Über uns</a>
-      <a href="#shop" class="hover:text-green-600 transition">Shop</a>
       <a href="#faq" class="hover:text-green-600 transition">FAQ</a>
     </nav>
 
