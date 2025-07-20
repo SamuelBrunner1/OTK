@@ -3,12 +3,11 @@ import "../styles/global.css";
 import SwiperInit from "../components/SwiperInit.astro";
 ---
 
+<!-- ✅ Mobile Menu Script -->
 <script type="module" client:load>
   import initMobileMenu from '/src/scripts/mobileMenu.js';
   initMobileMenu();
 </script>
-
-
 
 <html lang="hu">
 <head>
@@ -28,7 +27,10 @@ import SwiperInit from "../components/SwiperInit.astro";
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
+  <!-- ✅ Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ✅ Styles -->
   <style>
     body { font-family: 'Inter', sans-serif; }
     h1, h2 { letter-spacing: -0.02em; }
@@ -72,6 +74,7 @@ import SwiperInit from "../components/SwiperInit.astro";
 
 <body class="bg-gray-50 text-gray-800">
 
+<!-- ✅ HEADER -->
 <header class="fixed top-0 w-full bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
     
@@ -111,17 +114,16 @@ import SwiperInit from "../components/SwiperInit.astro";
   </div>
 </header>
 
-
-<!-- HERO -->
+<!-- ✅ HERO -->
 <section id="home" 
   class="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center"
   style="background: url('/NAPRA_BILD.jpg') center/cover no-repeat;">
   
-  <!-- ✅ Overlay für bessere Lesbarkeit -->
+  <!-- Overlay -->
   <div class="absolute inset-0 bg-white/80"></div>
 
-  <!-- ✅ Content mit Glassmorphism -->
-  <div class="hero-text relative max-w-2xl px-6 z-10 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg p-10">
+  <!-- Hero Content -->
+  <div class="hero-text relative max-w-2xl px-6 z-10">
     <h1 class="hero-headline text-5xl md:text-7xl font-extrabold mb-6 text-gray-900">
       Frisches Bio.<br />Direkt vom Bauernhof.
     </h1>
@@ -135,9 +137,8 @@ import SwiperInit from "../components/SwiperInit.astro";
   </div>
 </section>
 
-
 <!-- ✅ ÜBER UNS -->
-<section id="about" class="relative py-20 px-8 bg-[#F6FAF7] bg-center" data-animate>
+<section id="about" class="relative py-20 px-8 bg-[#F6FAF7]" data-animate>
   <div class="relative max-w-4xl mx-auto text-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-10">
     <h2 class="text-4xl font-bold mb-6">Über uns</h2>
     <p class="text-lg leading-8 text-gray-700">
@@ -249,13 +250,6 @@ import SwiperInit from "../components/SwiperInit.astro";
     });
   }, { threshold: 0.15 });
   document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-
-  // ✅ Mobile Menu Toggle
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
 </script>
 
 </body>
