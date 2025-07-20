@@ -32,7 +32,7 @@ import SwiperInit from "../components/SwiperInit.astro";
 
     /* Hero Glassmorphism */
     .hero-text {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(10px);
       padding: 30px 40px;
       border-radius: 20px;
@@ -40,15 +40,8 @@ import SwiperInit from "../components/SwiperInit.astro";
       display: inline-block;
     }
     .hero-headline { text-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-    .cta-button {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
 
-    /* ✅ Sticky CTA */
+    /* Sticky CTA */
     .sticky-cta {
       position: fixed;
       bottom: 15px;
@@ -72,15 +65,14 @@ import SwiperInit from "../components/SwiperInit.astro";
 
 <body class="bg-gray-50 text-gray-800">
 
-
-<header class="fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-gray-200 shadow-sm z-50">
+<!-- ✅ HEADER -->
+<header class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    
     <!-- Logo -->
-    <div class="flex items-center gap-2">
-      <span class="text-2xl font-bold text-gray-900">BioKosár</span>
-    </div>
+    <div class="text-2xl font-bold text-gray-900">BioKosár</div>
 
-    <!-- Navigation -->
+    <!-- Desktop Nav -->
     <nav class="hidden md:flex space-x-8 text-gray-700 text-lg font-medium">
       <a href="#home" class="hover:text-green-600 transition">Home</a>
       <a href="#about" class="hover:text-green-600 transition">Über uns</a>
@@ -88,151 +80,171 @@ import SwiperInit from "../components/SwiperInit.astro";
       <a href="#faq" class="hover:text-green-600 transition">FAQ</a>
     </nav>
 
-    <!-- CTA -->
+    <!-- Desktop CTA -->
     <a href="https://shop.biokosar.hu" 
        class="hidden md:inline-block bg-green-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
        Jetzt bestellen
     </a>
 
-    <!-- Mobile Menu Button -->
-    <button class="md:hidden p-2 text-gray-700 hover:text-green-600">
-      ☰
-    </button>
+    <!-- Mobile Menu -->
+    <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+  </div>
+
+  <!-- ✅ Mobile Menu Content -->
+  <div id="mobile-menu" class="hidden bg-white border-t border-gray-200 flex flex-col text-lg p-4">
+    <a href="#home" class="py-2">Home</a>
+    <a href="#about" class="py-2">Über uns</a>
+    <a href="#shop" class="py-2">Shop</a>
+    <a href="#faq" class="py-2">FAQ</a>
+    <a href="https://shop.biokosar.hu" class="bg-green-600 text-white py-3 px-4 rounded-lg text-center mt-4">Jetzt bestellen</a>
   </div>
 </header>
 
+<!-- HERO -->
+<section id="home" 
+  class="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center"
+  style="background: url('/NAPRA_BILD.jpg') center/cover no-repeat;">
+  
+  <!-- ✅ Overlay für bessere Lesbarkeit -->
+  <div class="absolute inset-0 bg-white/80"></div>
 
-  <!-- HERO -->
-  <section class="h-screen flex flex-col justify-center items-center text-center relative bg-cover bg-center"
-    style="background: linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.95)), url('/NAPRA_BILD.jpg');">
-    <div class="hero-text relative max-w-2xl px-6">
-      <h1 class="hero-headline text-5xl md:text-7xl font-extrabold mb-6 text-gray-900">
-        Frisches Bio.<br />Direkt vom Bauernhof.
-      </h1>
-      <p class="text-lg md:text-xl mb-8 font-light text-gray-700 leading-relaxed">
-        Qualität, die man schmeckt. Bestelle heute – genieße morgen.
-      </p>
-      <a href="https://shop.biokosar.hu" class="cta-button bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700">
-        Zum Shop
-      </a>
-    </div>
-  </section>
+  <!-- ✅ Content mit Glassmorphism -->
+  <div class="hero-text relative max-w-2xl px-6 z-10 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg p-10">
+    <h1 class="hero-headline text-5xl md:text-7xl font-extrabold mb-6 text-gray-900">
+      Frisches Bio.<br />Direkt vom Bauernhof.
+    </h1>
+    <p class="text-lg md:text-xl mb-8 font-light text-gray-700 leading-relaxed">
+      Qualität, die man schmeckt. Bestelle heute – genieße morgen.
+    </p>
+    <a href="https://shop.biokosar.hu" 
+       class="cta-button bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition">
+      Zum Shop
+    </a>
+  </div>
+</section>
 
-  <!-- ÜBER UNS -->
-  <section class="relative py-20 px-8 bg-gray-50 bg-cover bg-center" 
-    style="background: url('/napra-logo.png') center no-repeat; background-size: 300px; background-color: #F6FAF7;" 
-    data-animate>
-    <div class="relative max-w-4xl mx-auto text-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-10">
-      <h2 class="text-4xl font-bold mb-6">Über uns</h2>
-      <p class="text-lg leading-8 text-gray-700">
-        BioKosár steht für frische, regionale Bio-Produkte direkt vom Bauernhof. 
-        Unser Ziel ist es, nachhaltige Landwirtschaft zu fördern und gesunde Ernährung für alle zugänglich zu machen. 
-        Mit einer engen Zusammenarbeit lokaler Landwirte bieten wir hochwertige Lebensmittel – ehrlich, frisch und umweltfreundlich.
-      </p>
-    </div>
-  </section>
 
-  <!-- KUNDENBEWERTUNGEN -->
-  <section class="bg-[#F1F8F4] py-16 mt-16 rounded-t-3xl" data-animate>
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-10">Was unsere Kunden sagen</h2>
-      <SwiperInit>
-        <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
-          <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
-          <p class="text-lg italic mb-4">„Ich fühle zu viel, in einer Welt die flach atmet!💘“</p>
-          <span class="block font-semibold">– Max Mustermann</span>
-        </div>
-        <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
-          <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
-          <p class="text-lg italic mb-4">„Schnelle Lieferung und tolle Qualität.“</p>
-          <span class="block font-semibold">– Anna Beispiel</span>
-        </div>
-        <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
-          <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
-          <p class="text-lg italic mb-4">„Endlich echte Bio-Produkte, direkt vom Bauernhof.“</p>
-          <span class="block font-semibold">– Peter Grün</span>
-        </div>
-      </SwiperInit>
-    </div>
-  </section>
+<!-- ✅ ÜBER UNS -->
+<section id="about" class="relative py-20 px-8 bg-[#F6FAF7] bg-center" data-animate>
+  <div class="relative max-w-4xl mx-auto text-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-10">
+    <h2 class="text-4xl font-bold mb-6">Über uns</h2>
+    <p class="text-lg leading-8 text-gray-700">
+      BioKosár steht für frische, regionale Bio-Produkte direkt vom Bauernhof. 
+      Unser Ziel ist es, nachhaltige Landwirtschaft zu fördern und gesunde Ernährung für alle zugänglich zu machen. 
+      Mit einer engen Zusammenarbeit lokaler Landwirte bieten wir hochwertige Lebensmittel – ehrlich, frisch und umweltfreundlich.
+    </p>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="bg-[#F6FAF7] py-20 px-6" data-animate>
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-10">Häufige Fragen</h2>
-      <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg divide-y divide-gray-200 border border-gray-200">
-        <details class="group p-6">
-          <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
-            <span>Wie schnell wird geliefert?</span>
-            <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
-          </summary>
-          <p class="mt-4 text-gray-600 leading-relaxed">
-            Wir liefern in der Regel innerhalb von 24 Stunden nach Bestellung, sodass deine Bio-Produkte immer frisch bei dir ankommen.
-          </p>
-        </details>
-        <details class="group p-6">
-          <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
-            <span>Sind alle Produkte wirklich bio?</span>
-            <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
-          </summary>
-          <p class="mt-4 text-gray-600 leading-relaxed">
-            Ja! Alle Produkte stammen aus zertifizierter biologischer Landwirtschaft und werden von lokalen Bauernhöfen bezogen.
-          </p>
-        </details>
-        <details class="group p-6">
-          <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
-            <span>Gibt es ein Abonnement?</span>
-            <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
-          </summary>
-          <p class="mt-4 text-gray-600 leading-relaxed">
-            Ja, du kannst ein wöchentliches oder monatliches Abo für deinen Bio-Korb wählen – flexibel und jederzeit kündbar.
-          </p>
-        </details>
+<!-- ✅ KUNDENBEWERTUNGEN -->
+<section id="shop" class="bg-[#F1F8F4] py-16 mt-16 rounded-t-3xl" data-animate>
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-10">Was unsere Kunden sagen</h2>
+    <SwiperInit>
+      <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
+        <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
+        <p class="text-lg italic mb-4">„Ich fühle zu viel, in einer Welt die flach atmet!💘“</p>
+        <span class="block font-semibold">– Max Mustermann</span>
       </div>
-    </div>
-  </section>
+      <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
+        <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
+        <p class="text-lg italic mb-4">„Schnelle Lieferung und tolle Qualität.“</p>
+        <span class="block font-semibold">– Anna Beispiel</span>
+      </div>
+      <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
+        <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
+        <p class="text-lg italic mb-4">„Endlich echte Bio-Produkte, direkt vom Bauernhof.“</p>
+        <span class="block font-semibold">– Peter Grün</span>
+      </div>
+    </SwiperInit>
+  </div>
+</section>
 
-  <!-- Sticky CTA -->
-  <a href="https://shop.biokosar.hu" class="sticky-cta">Jetzt Bio-Korb bestellen</a>
-
-  <!-- FOOTER -->
-  <footer class="bg-gray-100 border-t border-gray-200 text-gray-600 text-sm">
-    <div class="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-4 gap-8">
-      <div>
-        <h3 class="font-semibold text-gray-800 mb-3">BioKosár</h3>
-        <p>Frische Bio-Produkte direkt vom Bauernhof – einfach online bestellen.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold text-gray-800 mb-3">Rechtliches</h3>
-        <ul>
-          <li><a href="/rechtliches" class="hover:text-green-700">Rechtliches</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-semibold text-gray-800 mb-3">Kontakt</h3>
-        <p>Email: <a href="mailto:info@biokosar.hu" class="hover:text-green-700">info@biokosar.hu</a></p>
-        <p>Tel: +36 30 123 4567</p>
-      </div>
-      <div>
-        <h3 class="font-semibold text-gray-800 mb-3">Shop</h3>
-        <a href="https://shop.biokosar.hu" class="hover:text-green-700">Zum Shop</a>
-      </div>
+<!-- ✅ FAQ -->
+<section id="faq" class="bg-[#F6FAF7] py-20 px-6" data-animate>
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-10">Häufige Fragen</h2>
+    <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg divide-y divide-gray-200 border border-gray-200">
+      <details class="group p-6">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+          <span>Wie schnell wird geliefert?</span>
+          <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          Wir liefern in der Regel innerhalb von 24 Stunden nach Bestellung, sodass deine Bio-Produkte immer frisch bei dir ankommen.
+        </p>
+      </details>
+      <details class="group p-6">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+          <span>Sind alle Produkte wirklich bio?</span>
+          <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          Ja! Alle Produkte stammen aus zertifizierter biologischer Landwirtschaft und werden von lokalen Bauernhöfen bezogen.
+        </p>
+      </details>
+      <details class="group p-6">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+          <span>Gibt es ein Abonnement?</span>
+          <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          Ja, du kannst ein wöchentliches oder monatliches Abo für deinen Bio-Korb wählen – flexibel und jederzeit kündbar.
+        </p>
+      </details>
     </div>
-    <div class="text-center text-xs text-gray-400 py-4 border-t border-gray-200">
-      © 2025 BioKosár. Alle Rechte vorbehalten.
-    </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- Scroll Animation Script -->
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-  </script>
+<!-- ✅ Sticky CTA -->
+<a href="https://shop.biokosar.hu" class="sticky-cta">Jetzt Bio-Korb bestellen</a>
+
+<!-- ✅ FOOTER -->
+<footer class="bg-gray-100 border-t border-gray-200 text-gray-600 text-sm">
+  <div class="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-4 gap-8">
+    <div>
+      <h3 class="font-semibold text-gray-800 mb-3">BioKosár</h3>
+      <p>Frische Bio-Produkte direkt vom Bauernhof – einfach online bestellen.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-gray-800 mb-3">Rechtliches</h3>
+      <ul>
+        <li><a href="/rechtliches" class="hover:text-green-700">Rechtliches</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold text-gray-800 mb-3">Kontakt</h3>
+      <p>Email: <a href="mailto:info@biokosar.hu" class="hover:text-green-700">info@biokosar.hu</a></p>
+      <p>Tel: +36 30 123 4567</p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-gray-800 mb-3">Shop</h3>
+      <a href="https://shop.biokosar.hu" class="hover:text-green-700">Zum Shop</a>
+    </div>
+  </div>
+  <div class="text-center text-xs text-gray-400 py-4 border-t border-gray-200">
+    © 2025 BioKosár. Alle Rechte vorbehalten.
+  </div>
+</footer>
+
+<!-- ✅ Scroll Animation -->
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+  // ✅ Mobile Menu Toggle
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
 </body>
 </html>
