@@ -174,7 +174,7 @@ import SwiperInit from "../components/SwiperInit.astro";
   }
 
   .hero-text {
-    background: rgba(255, 255, 255, 0.9); /* Desktop fast undurchsichtig */
+    background: rgba(255, 255, 255, 0.9); /* Desktop: fast deckend */
     backdrop-filter: blur(8px);
     padding: 30px 40px;
     border-radius: 20px;
@@ -183,24 +183,28 @@ import SwiperInit from "../components/SwiperInit.astro";
     transition: background 0.3s ease;
   }
 
-  /* ✅ Mobile: Weniger deckend */
+  /* ✅ Mobile: Voll deckend */
   @media (max-width: 768px) {
     .hero-text {
-      background: rgba(255, 255, 255, 0.8); /* Deutlich transparenter */
+      background: rgba(255, 255, 255, 0.9); /* Komplett Weiß */
     }
   }
 
-  /* ✅ Overlay heller machen für Mobile */
+  /* ✅ Overlay */
   .hero-overlay {
-    background: rgba(255, 255, 255, 0.6); /* Standard */
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
 
   @media (max-width: 768px) {
     .hero-overlay {
-      background: rgba(255, 255, 255, 0.8); /* Weniger Overlay für Mobile */
+      background: rgba(255, 255, 255, 0.85); /* Mobile heller Overlay */
     }
   }
 </style>
+
 
 
 </section>
