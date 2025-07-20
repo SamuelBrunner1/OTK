@@ -3,7 +3,7 @@ import "../styles/global.css";
 import SwiperInit from "../components/SwiperInit.astro";
 ---
 
-<!-- ✅ Mobile Menu Script -->
+<!-- Mobile Menu Script -->
 <script type="module" client:load>
   import initMobileMenu from '/src/scripts/mobileMenu.js';
   initMobileMenu();
@@ -15,25 +15,30 @@ import SwiperInit from "../components/SwiperInit.astro";
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BioKosár – Frische Bio-Produkte direkt vom Bauernhof</title>
   <meta name="description" content="Frische, regionale Bio-Produkte bequem online bestellen. Nachhaltig, regional und direkt vom Bauernhof." />
-
-  <!-- ✅ SEO & Social -->
-  <meta property="og:title" content="BioKosár – Frische Bio-Produkte direkt vom Bauernhof" />
-  <meta property="og:description" content="Frische, regionale Bio-Produkte bequem online bestellen. Nachhaltig, regional und direkt vom Bauernhof." />
-  <meta property="og:image" content="/NAPRA_BILD.jpg" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- ✅ Apple & Favicon -->
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
-  <!-- ✅ Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- ✅ Styles -->
   <style>
     body { font-family: 'Inter', sans-serif; }
     h1, h2 { letter-spacing: -0.02em; }
+
+    /* Burger Icon Animation */
+    #burgerBtn span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      margin: 5px auto;
+      background: #333;
+      transition: 0.3s;
+    }
+    #burgerBtn.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    #burgerBtn.open span:nth-child(2) {
+      opacity: 0;
+    }
+    #burgerBtn.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
 
     /* Scroll Animation */
     [data-animate] { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
@@ -97,9 +102,11 @@ import SwiperInit from "../components/SwiperInit.astro";
        Jetzt bestellen
     </a>
 
-    <!-- Mobile Menu Button -->
-    <button id="burgerBtn" class="md:hidden p-2 text-gray-700 hover:text-green-600 focus:outline-none">
-      ☰
+    <!-- Burger Menu Button -->
+    <button id="burgerBtn" class="md:hidden flex flex-col justify-center items-center p-2">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 
@@ -115,14 +122,8 @@ import SwiperInit from "../components/SwiperInit.astro";
 </header>
 
 <!-- ✅ HERO -->
-<section id="home" 
-  class="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center"
-  style="background: url('/NAPRA_BILD.jpg') center/cover no-repeat;">
-  
-  <!-- Overlay -->
+<section id="home" class="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center" style="background: url('/NAPRA_BILD.jpg') center/cover no-repeat;">
   <div class="absolute inset-0 bg-white/80"></div>
-
-  <!-- Hero Content -->
   <div class="hero-text relative max-w-2xl px-6 z-10">
     <h1 class="hero-headline text-5xl md:text-7xl font-extrabold mb-6 text-gray-900">
       Frisches Bio.<br />Direkt vom Bauernhof.
@@ -130,8 +131,7 @@ import SwiperInit from "../components/SwiperInit.astro";
     <p class="text-lg md:text-xl mb-8 font-light text-gray-700 leading-relaxed">
       Qualität, die man schmeckt. Bestelle heute – genieße morgen.
     </p>
-    <a href="https://shop.biokosar.hu" 
-       class="cta-button bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition">
+    <a href="https://shop.biokosar.hu" class="cta-button bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700">
       Zum Shop
     </a>
   </div>
