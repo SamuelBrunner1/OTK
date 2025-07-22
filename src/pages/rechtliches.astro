@@ -2,37 +2,37 @@
 import "../styles/global.css";
 ---
 
-<html lang="hu">
+<html lang="hu" style="color-scheme: light;">
 <head>
   <meta charset="UTF-8">
   <title>Rechtliches - BioKosár</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 flex flex-col min-h-screen">
 
-  <!-- Navbar -->
-  <header class="fixed top-0 w-full flex justify-between items-center px-12 py-6 bg-[#E8F5E9] border-b border-[#C8E6C9] shadow-sm z-50">
-    <a href="/" class="text-2xl font-semibold text-gray-900 hover:text-green-700 transition">BioKosár</a>
-    <a href="https://shop.biokosar.hu" class="text-base text-gray-900 hover:text-green-700 transition">
-      Shop
-    </a>
+  <!-- ✅ Header -->
+  <header class="fixed top-0 w-full bg-gradient-to-r from-green-100 to-white backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="/" class="text-2xl font-bold text-gray-900 hover:text-green-700 transition">BioKosár</a>
+      <a href="https://shop.biokosar.hu" class="text-base text-gray-900 hover:text-green-700 transition">
+        Shop
+      </a>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="h-64 flex justify-center items-center text-center bg-gray-50 border-b border-gray-200 mt-24">
+  <!-- ✅ Hero -->
+  <section class="h-48 flex justify-center items-center text-center bg-gray-50 border-b border-gray-200 mt-20">
     <h1 class="text-4xl md:text-6xl font-semibold">Rechtliches</h1>
   </section>
 
-  <!-- Content -->
-<!-- Content -->
-<main class="max-w-4xl mx-auto px-6 py-16 leading-relaxed text-gray-800">
+  
+
+  <!-- ✅ Content -->
+  <main class="flex-grow max-w-4xl mx-auto px-6 py-16 leading-relaxed text-gray-800">
     
     <!-- Impressum -->
     <section>
-<h2 class="text-3xl font-semibold mb-4 border-b border-gray-300 pb-2">Impressum</h2>
+      <h2 class="text-3xl font-semibold mb-4 border-b border-gray-300 pb-2">Impressum</h2>
       <p class="text-lg leading-8 mb-16">
         <strong>BioKosár Kft.</strong><br>
         Musterstraße 1<br>
@@ -61,12 +61,10 @@ import "../styles/global.css";
         Bitte beachten Sie, dass Sie durch die Nutzung unseres Online-Shops unsere AGB akzeptieren.<br><br>
       </p>
     </section>
-</main>
+  </main>
 
-
-
-  <!-- Footer -->
-  <footer class="bg-gray-50 border-t border-gray-200 text-gray-600 text-sm">
+  <!-- ✅ Footer -->
+  <footer class="bg-gray-50 border-t border-gray-200 text-gray-600 text-sm mt-auto">
     <div class="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-4 gap-8">
       <!-- Über uns -->
       <div>
