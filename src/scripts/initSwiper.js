@@ -9,23 +9,31 @@ export default function initSwiper() {
 
   const swiper = new Swiper('.swiper', {
     modules: [Navigation, Pagination],
+
     loop: true,
     speed: 600,
-    spaceBetween: 30,
+    spaceBetween: 20,
     slidesPerView: 1,
-    centeredSlides: true,
 
+    // ✅ Beobachte DOM & Container
+    observer: true,
+    observeParents: true,
+    resizeObserver: true,
+
+    // ✅ Responsive Einstellungen
     breakpoints: {
-      640: { slidesPerView: 1.2 },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
+      640: { slidesPerView: 1.2, spaceBetween: 20 },
+      768: { slidesPerView: 2, spaceBetween: 24, centeredSlides: true },
+      1024: { slidesPerView: 3, spaceBetween: 30, centeredSlides: true },
     },
 
+    // ✅ Navigation
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
 
+    // ✅ Pagination
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -33,5 +41,7 @@ export default function initSwiper() {
     },
 
     grabCursor: true,
+    touchRatio: 1,
+    threshold: 10,
   });
 }
