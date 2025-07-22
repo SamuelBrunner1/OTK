@@ -65,7 +65,7 @@ import SwiperInit from "../components/SwiperInit.astro";
 <div id="menuOverlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40"></div>
 
 <!-- ✅ HERO -->
-<section id="home" class="relative h-[80vh] md:h-screen flex flex-col justify-center items-center text-center hero-pattern">
+<section id="home" class="relative h-[60vh] md:h-screen flex flex-col justify-center items-center text-center hero-pattern">
   <div class="hero-overlay absolute inset-0"></div>
   <div class="hero-text relative max-w-2xl px-6 z-10">
     <h1 class="text-3xl sm:text-4xl md:text-7xl font-extrabold mb-6 text-gray-900 leading-tight">
@@ -108,15 +108,23 @@ import SwiperInit from "../components/SwiperInit.astro";
         <p class="text-lg italic mb-4">„Schnelle Lieferung und tolle Qualität.“</p>
         <span class="block font-semibold">– Anna Beispiel</span>
       </div>
+      <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
+        <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
+        <p class="text-lg italic mb-4">„Tolle Produkte und super Service – absolut empfehlenswert!“</p>
+        <span class="block font-semibold">– Lisa Sommer</span>
+      </div>
     </SwiperInit>
   </div>
 </section>
+
 
 <!-- ✅ FAQ -->
 <section id="faq" class="bg-[#F6FAF7] py-12 md:py-20 px-6" data-animate>
   <div class="max-w-3xl mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Häufige Fragen</h2>
     <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg divide-y divide-gray-200 border border-gray-200">
+      
+      <!-- ✅ Frage 1 -->
       <details class="group p-6">
         <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
           <span>Wie schnell wird geliefert?</span>
@@ -126,6 +134,8 @@ import SwiperInit from "../components/SwiperInit.astro";
           Wir liefern in der Regel innerhalb von 24 Stunden nach Bestellung, sodass deine Bio-Produkte immer frisch bei dir ankommen.
         </p>
       </details>
+      
+      <!-- ✅ Frage 2 -->
       <details class="group p-6">
         <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
           <span>Sind alle Produkte wirklich bio?</span>
@@ -135,12 +145,24 @@ import SwiperInit from "../components/SwiperInit.astro";
           Ja! Alle Produkte stammen aus zertifizierter biologischer Landwirtschaft und werden von lokalen Bauernhöfen bezogen.
         </p>
       </details>
+      
+      <!-- ✅ Neue Frage 3 -->
+      <details class="group p-6">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+          <span>Gibt es ein Abonnement?</span>
+          <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          Ja, du kannst ein wöchentliches oder monatliches Bio-Korb-Abo wählen – flexibel und jederzeit kündbar.
+        </p>
+      </details>     
     </div>
   </div>
 </section>
 
+
 <!-- ✅ Sticky CTA -->
-<a href="https://shop.biokosar.hu" class="sticky-cta">Jetzt Bio-Korb bestellen</a>
+<a href="https://shop.biokosar.hu" class="sticky-cta">Jetzt bestellen</a>
 
 <!-- ✅ Footer -->
 <footer class="bg-gray-100 border-t border-gray-200 text-gray-600 text-sm">
