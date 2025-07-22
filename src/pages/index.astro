@@ -19,37 +19,33 @@ import SwiperInit from "../components/SwiperInit.astro";
 
   <!-- Fonts & Tailwind -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
-
 </head>
 
 <body class="bg-gray-50 text-gray-800">
 
 <!-- ✅ HEADER -->
-<header class="fixed top-0 w-full bg-gradient-to-r from-green-100 to-white backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
+<header id="mainHeader" class="fixed top-0 w-full bg-gradient-to-r from-green-100 to-white backdrop-blur-md border-b border-gray-200 shadow-sm z-50 transition-transform duration-300">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
-    
     <!-- ✅ Logo -->
     <a href="#home" class="flex items-center gap-2">
       <span class="text-xl sm:text-2xl font-bold text-gray-900">BioKosár</span>
     </a>
 
-    <!-- ✅ Navigation (Desktop) -->
+    <!-- ✅ Navigation -->
     <nav class="hidden md:flex space-x-6 lg:space-x-8 text-gray-700 text-base lg:text-lg font-medium">
       <a href="#home" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">Home</a>
       <a href="#about" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">Über uns</a>
       <a href="#faq" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">FAQ</a>
     </nav>
 
-    <!-- ✅ CTA (Desktop) -->
+    <!-- ✅ CTA Desktop -->
     <a href="https://shop.biokosar.hu" 
        class="hidden md:inline-block bg-green-600 text-white px-4 lg:px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition text-sm lg:text-base">
        Jetzt bestellen
     </a>
 
-    <!-- ✅ Burger Button (Mobile) -->
+    <!-- ✅ Mobile Burger -->
     <button id="burgerBtn" class="md:hidden p-2 text-gray-700 hover:text-green-600 focus:outline-none">
-      <!-- SVG Icon -->
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
       </svg>
@@ -66,16 +62,11 @@ import SwiperInit from "../components/SwiperInit.astro";
   </div>
 </header>
 
-<!-- ✅ Overlay -->
 <div id="menuOverlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40"></div>
 
 <!-- ✅ HERO -->
 <section id="home" class="relative h-[80vh] md:h-screen flex flex-col justify-center items-center text-center hero-pattern">
-  
-  <!-- ✅ Overlay -->
   <div class="hero-overlay absolute inset-0"></div>
-
-  <!-- ✅ Hero Content -->
   <div class="hero-text relative max-w-2xl px-6 z-10">
     <h1 class="text-3xl sm:text-4xl md:text-7xl font-extrabold mb-6 text-gray-900 leading-tight">
       Frisches Bio.<br />Direkt vom Bauernhof.
@@ -84,13 +75,13 @@ import SwiperInit from "../components/SwiperInit.astro";
       Qualität, die man schmeckt. Bestelle heute – genieße morgen.
     </p>
     <a href="https://shop.biokosar.hu" 
-       class="cta-button bg-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-green-700 transition">
+       class="bg-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-green-700 transition">
       Zum Shop
     </a>
   </div>
 </section>
 
-<!-- ✅ ÜBER UNS -->
+<!-- ✅ Über uns -->
 <section id="about" class="relative py-12 md:py-20 px-6 bg-[#F6FAF7]" data-animate>
   <div class="relative max-w-4xl mx-auto text-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 md:p-10">
     <h2 class="text-3xl md:text-4xl font-bold mb-4">Über uns</h2>
@@ -102,11 +93,10 @@ import SwiperInit from "../components/SwiperInit.astro";
   </div>
 </section>
 
-
-<!-- ✅ KUNDENBEWERTUNGEN -->
-<section id="shop" class="bg-[#F1F8F4] py-16 mt-16 rounded-t-3xl" data-animate>
+<!-- ✅ Kundenbewertungen -->
+<section id="shop" class="bg-[#F1F8F4] py-12 md:py-16 mt-12 md:mt-16 rounded-t-3xl" data-animate>
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-10">Was unsere Kunden sagen</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Was unsere Kunden sagen</h2>
     <SwiperInit>
       <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
         <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
@@ -118,19 +108,14 @@ import SwiperInit from "../components/SwiperInit.astro";
         <p class="text-lg italic mb-4">„Schnelle Lieferung und tolle Qualität.“</p>
         <span class="block font-semibold">– Anna Beispiel</span>
       </div>
-      <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
-        <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
-        <p class="text-lg italic mb-4">„Endlich echte Bio-Produkte, direkt vom Bauernhof.“</p>
-        <span class="block font-semibold">– Peter Grün</span>
-      </div>
     </SwiperInit>
   </div>
 </section>
 
 <!-- ✅ FAQ -->
-<section id="faq" class="bg-[#F6FAF7] py-20 px-6" data-animate>
+<section id="faq" class="bg-[#F6FAF7] py-12 md:py-20 px-6" data-animate>
   <div class="max-w-3xl mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-10">Häufige Fragen</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Häufige Fragen</h2>
     <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg divide-y divide-gray-200 border border-gray-200">
       <details class="group p-6">
         <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
@@ -150,15 +135,6 @@ import SwiperInit from "../components/SwiperInit.astro";
           Ja! Alle Produkte stammen aus zertifizierter biologischer Landwirtschaft und werden von lokalen Bauernhöfen bezogen.
         </p>
       </details>
-      <details class="group p-6">
-        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
-          <span>Gibt es ein Abonnement?</span>
-          <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
-        </summary>
-        <p class="mt-4 text-gray-600 leading-relaxed">
-          Ja, du kannst ein wöchentliches oder monatliches Abo für deinen Bio-Korb wählen – flexibel und jederzeit kündbar.
-        </p>
-      </details>
     </div>
   </div>
 </section>
@@ -166,7 +142,7 @@ import SwiperInit from "../components/SwiperInit.astro";
 <!-- ✅ Sticky CTA -->
 <a href="https://shop.biokosar.hu" class="sticky-cta">Jetzt Bio-Korb bestellen</a>
 
-<!-- ✅ FOOTER -->
+<!-- ✅ Footer -->
 <footer class="bg-gray-100 border-t border-gray-200 text-gray-600 text-sm">
   <div class="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-4 gap-8">
     <div>
@@ -194,42 +170,45 @@ import SwiperInit from "../components/SwiperInit.astro";
   </div>
 </footer>
 
-<!-- ✅ Scroll Animation & Mobile Menu Script -->
+<!-- ✅ JS: Scroll Animation + Mobile Menu + Smart Sticky Header -->
 <script>
   // Scroll Animation
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.15 });
   document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
 
-  // Mobile Menu Toggle
+  // Mobile Menu
   const burgerBtn = document.getElementById('burgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   const overlay = document.getElementById('menuOverlay');
   const links = document.querySelectorAll('.mobile-link');
-
   burgerBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
     overlay.classList.toggle('active');
-    document.body.classList.toggle('overflow-hidden'); // ✅ Scroll Lock
+    document.body.classList.toggle('overflow-hidden');
   });
-
-  overlay.addEventListener('click', () => {
+  overlay.addEventListener('click', closeMenu);
+  links.forEach(link => link.addEventListener('click', closeMenu));
+  function closeMenu() {
     mobileMenu.classList.add('hidden');
     overlay.classList.remove('active');
     document.body.classList.remove('overflow-hidden');
-  });
+  }
 
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      overlay.classList.remove('active');
-      document.body.classList.remove('overflow-hidden');
-    });
+  // ✅ Smart Sticky Header
+  let lastScroll = 0;
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > lastScroll && currentScroll > 80) {
+      header.style.transform = 'translateY(-100%)'; // nach oben ausblenden
+    } else {
+      header.style.transform = 'translateY(0)'; // einblenden
+    }
+    lastScroll = currentScroll;
   });
 </script>
 
