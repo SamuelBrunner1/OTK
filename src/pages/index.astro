@@ -96,26 +96,38 @@ import SwiperInit from "../components/SwiperInit.astro";
 <!-- ✅ Kundenbewertungen -->
 <section id="shop" class="bg-[#F1F8F4] py-12 md:py-16 mt-12 md:mt-16 rounded-t-3xl" data-animate>
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Was unsere Kunden sagen</h2>
-    <SwiperInit>
-      <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-10">
+      Was unsere Kunden sagen
+    </h2>
+
+    <!-- ✅ Scroll-Snap Container -->
+    <div class="scroll-snap-container">
+      
+      <!-- Slide 1 -->
+      <div class="scroll-snap-slide">
         <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
         <p class="text-lg italic mb-4">„Ich fühle zu viel, in einer Welt die flach atmet!💘“</p>
         <span class="block font-semibold">– Max Mustermann</span>
       </div>
-      <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
+
+      <!-- Slide 2 -->
+      <div class="scroll-snap-slide">
         <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
         <p class="text-lg italic mb-4">„Schnelle Lieferung und tolle Qualität.“</p>
         <span class="block font-semibold">– Anna Beispiel</span>
       </div>
-      <div class="swiper-slide bg-white shadow-md rounded-xl p-6 text-center">
+
+      <!-- Slide 3 -->
+      <div class="scroll-snap-slide">
         <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
         <p class="text-lg italic mb-4">„Tolle Produkte und super Service – absolut empfehlenswert!“</p>
         <span class="block font-semibold">– Lisa Sommer</span>
       </div>
-    </SwiperInit>
+
+    </div>
   </div>
 </section>
+
 
 
 <!-- ✅ FAQ -->

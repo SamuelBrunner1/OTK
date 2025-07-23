@@ -88,33 +88,26 @@ h1, h2 {
   display: block;
 }
 
-/* ✅ Swiper Styling */
-.swiper {
-  position: relative;
-  padding-bottom: 40px; /* Platz für Pagination */
+/* ✅ Scroll Snap Slider */
+.scroll-snap-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  padding: 16px;
+  scroll-behavior: smooth;
 }
-.swiper-wrapper {
-  touch-action: pan-y; /* ✅ Wichtig für iOS Swipe-Gesten */
-}
-.swiper-slide {
+.scroll-snap-slide {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 20px;
   text-align: center;
 }
-.swiper-button-next,
-.swiper-button-prev {
-  color: #16a34a;
-}
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  color: #15803d;
-}
-.swiper-pagination-bullet {
-  background: #d1d5db;
-  opacity: 1;
-}
-.swiper-pagination-bullet-active {
-  background: #16a34a;
+@media (min-width: 768px) {
+  .scroll-snap-slide {
+    flex: 0 0 30%;
+  }
 }
