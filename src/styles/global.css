@@ -1,13 +1,14 @@
 /* ✅ TailwindCSS Import */
 @import "tailwindcss";
 
-/* ✅ Base Font & Body Style */
+/* ✅ Base Styles */
 body {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
   background-color: #ffffff; /* Immer weiß */
   color: #1f2937; /* Neutral Grau */
   margin: 0;
+  padding: 0;
 }
 
 /* ✅ Typografie */
@@ -51,7 +52,7 @@ h1, h2 {
 }
 @media (max-width: 640px) {
   .hero-text {
-    background: #fff;
+    background: #fff; /* ✅ Voll weiß auf Mobile */
   }
 }
 
@@ -87,10 +88,13 @@ h1, h2 {
   display: block;
 }
 
-/* ✅ Swiper Custom Styling */
+/* ✅ Swiper Styling */
 .swiper {
   position: relative;
   padding-bottom: 40px; /* Platz für Pagination */
+}
+.swiper-wrapper {
+  touch-action: pan-y; /* ✅ Wichtig für iOS Swipe-Gesten */
 }
 .swiper-slide {
   background: #fff;

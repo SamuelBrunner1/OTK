@@ -5,61 +5,49 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export default function initSwiper() {
-  console.log('✅ Swiper Initialisierung gestartet...');
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('✅ Swiper wird initialisiert...');
 
-  // Prüfen, ob ein Swiper-Container existiert
-  const swiperEl = document.querySelector('.swiper');
-  if (!swiperEl) {
-    console.warn('⚠️ Kein Swiper-Element gefunden.');
-    return;
-  }
+    const swiperEl = document.querySelector('.swiper');
+    if (!swiperEl) {
+      console.warn('⚠️ Kein Swiper-Element gefunden!');
+      return;
+    }
 
-  const swiper = new Swiper('.swiper', {
-    modules: [Navigation, Pagination],
+    new Swiper(swiperEl, {
+      modules: [Navigation, Pagination],
+      loop: true,
+      speed: 600,
+      spaceBetween: 20,
+      slidesPerView: 1,
 
-    // ✅ Allgemeine Einstellungen
-    loop: true,
-    speed: 600,
-    spaceBetween: 20,
-    slidesPerView: 1,
-    centeredSlides: true,
-    grabCursor: true,
-    allowTouchMove: true,
+      observer: true,
+      observeParents: true,
+      resizeObserver: true,
 
-    // ✅ Touch-Optimierung
-    touchRatio: 1,
-    threshold: 5, // Geringe Verzögerung für bessere Mobile-Performance
+      // ✅ Responsive Einstellungen
+      breakpoints: {
+        640: { slidesPerView: 1.2, spaceBetween: 20 },
+        768: { slidesPerView: 2, spaceBetween: 24, centeredSlides: true },
+        1024: { slidesPerView: 3, spaceBetween: 30, centeredSlides: true },
+      },
 
-    // ✅ Dynamisches Beobachten
-    observer: true,
-    observeParents: true,
+      // ✅ Navigation
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
 
-    // ✅ Responsive Einstellungen
-    breakpoints: {
-      640: { slidesPerView: 1.2, spaceBetween: 16 },
-      768: { slidesPerView: 2, spaceBetween: 20 },
-      1024: { slidesPerView: 3, spaceBetween: 24 },
-    },
+      // ✅ Pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
 
-    // ✅ Navigation
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
-    // ✅ Pagination
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      dynamicBullets: true,
-    },
-
-    // ✅ Debugging
-    on: {
-      init: () => console.log('✅ Swiper wurde erfolgreich initialisiert'),
-      resize: () => console.log('📏 Swiper hat sich angepasst'),
-    },
+      grabCursor: true,
+      touchRatio: 1,
+      threshold: 10,
+    });
   });
-
-  console.log('Swiper ready:', swiper);
 }

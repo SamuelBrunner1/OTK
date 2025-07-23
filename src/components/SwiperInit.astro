@@ -6,12 +6,12 @@ import 'swiper/css/pagination';
 
 <div class="swiper relative overflow-hidden">
   <div class="swiper-wrapper">
-    <slot /> <!-- Slides kommen von der Seite -->
+    <slot /> <!-- Slides von der Page -->
   </div>
 
   <!-- Navigation -->
-  <div class="swiper-button-prev hidden sm:flex"></div>
-  <div class="swiper-button-next hidden sm:flex"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 
   <!-- Pagination -->
   <div class="swiper-pagination"></div>
@@ -21,7 +21,13 @@ import 'swiper/css/pagination';
   .swiper {
     position: relative;
     overflow: hidden;
-    padding: 24px 0;
+    padding: 30px 0;
+    touch-action: pan-y; /* ✅ iOS fix */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .swiper-wrapper {
+    touch-action: pan-y;
   }
 
   .swiper-slide {
@@ -33,24 +39,21 @@ import 'swiper/css/pagination';
     width: auto;
     height: auto;
     padding: 20px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   }
 
   /* ✅ Navigation Buttons */
   .swiper-button-next,
   .swiper-button-prev {
     color: #16a34a;
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(8px);
     border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,41 +65,47 @@ import 'swiper/css/pagination';
   .swiper-button-next {
     right: 12px;
   }
+
   .swiper-button-prev {
     left: 12px;
   }
 
+  /* Pfeil-Symbol */
   .swiper-button-next::after,
   .swiper-button-prev::after {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
   }
 
+  /* ✅ Hover Effekt */
   .swiper-button-next:hover,
   .swiper-button-prev:hover {
     background: #16a34a;
     color: #fff;
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.4);
   }
 
-  /* ✅ Mobile: Navigation ausblenden */
-  @media (max-width: 640px) {
+  /* ✅ Mobile Optimierung */
+  @media (max-width: 768px) {
     .swiper-button-next,
     .swiper-button-prev {
-      display: none !important;
+      width: 44px;
+      height: 44px;
     }
   }
 
   /* ✅ Pagination Styling */
   .swiper-pagination-bullet {
-    background: #d1d5db;
+    background: #d1d5db; /* Neutral grau */
     opacity: 1;
     width: 10px;
     height: 10px;
-    margin: 0 5px !important;
+    margin: 0 6px !important;
     transition: background 0.3s ease;
   }
+
   .swiper-pagination-bullet-active {
-    background: #16a34a;
+    background: #16a34a; /* Grün für aktive */
   }
 </style>
 
