@@ -26,8 +26,10 @@ import SwiperInit from "../components/SwiperInit.astro";
 <!-- ✅ HEADER -->
 <header id="mainHeader" class="fixed top-0 w-full bg-gradient-to-r from-green-100 to-white backdrop-blur-md border-b border-gray-200 shadow-sm z-50 transition-transform duration-300">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
+    
     <!-- ✅ Logo -->
-    <a href="#home" class="flex items-center gap-2">
+    <a href="#home" class="flex items-center gap-3">
+      <img src="/NAPRA_BILD.jpg" alt="BioKosár Logo" class="h-10 sm:h-12 w-auto object-contain">
       <span class="text-xl sm:text-2xl font-bold text-gray-900">BioKosár</span>
     </a>
 
@@ -40,7 +42,7 @@ import SwiperInit from "../components/SwiperInit.astro";
 
     <!-- ✅ CTA Desktop -->
     <a href="https://shop.biokosar.hu" 
-       class="hidden md:inline-block bg-green-600 text-white px-4 lg:px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition text-sm lg:text-base">
+       class="hidden md:inline-block bg-green-600 text-white px-4 lg:px-5 py-2 rounded-lg font-semibold hover:bg-green-700 shadow-md hover:shadow-lg transition text-sm lg:text-base">
        Jetzt bestellen
     </a>
 
@@ -58,9 +60,14 @@ import SwiperInit from "../components/SwiperInit.astro";
       <a href="#home" class="hover:text-green-600 transition mobile-link">Home</a>
       <a href="#about" class="hover:text-green-600 transition mobile-link">Über uns</a>
       <a href="#faq" class="hover:text-green-600 transition mobile-link">FAQ</a>
+      <a href="https://shop.biokosar.hu" 
+         class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
+         Jetzt bestellen
+      </a>
     </nav>
   </div>
 </header>
+
 
 <div id="menuOverlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40"></div>
 
