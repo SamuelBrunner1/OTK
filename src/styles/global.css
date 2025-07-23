@@ -1,26 +1,26 @@
-/* TailwindCSS Import */
+/* ✅ TailwindCSS Import */
 @import "tailwindcss";
 
-/* Base Font */
+/* ✅ Base Font & Body Style */
 body {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
-
-  /* ✅ Entfernt Hintergrundbild – stattdessen weißer Hintergrund */
-  background-color: #ffffff;
+  background-color: #ffffff; /* Immer weiß */
+  color: #1f2937; /* Neutral Grau */
+  margin: 0;
 }
 
+/* ✅ Typografie */
 h1, h2 {
   letter-spacing: -0.02em;
 }
 
-/* Scroll Animation */
+/* ✅ Scroll Animation */
 [data-animate] {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.8s ease-out;
 }
-
 [data-animate].visible {
   opacity: 1;
   transform: translateY(0);
@@ -33,7 +33,6 @@ h1, h2 {
   inset: 0;
   z-index: 1;
 }
-
 @media (max-width: 640px) {
   .hero-overlay {
     background: rgba(255, 255, 255, 0.95);
@@ -50,10 +49,9 @@ h1, h2 {
   display: inline-block;
   z-index: 2;
 }
-
 @media (max-width: 640px) {
   .hero-text {
-    background: rgba(255, 255, 255, 1); /* ✅ Voll Weiß auf Mobile */
+    background: #fff;
   }
 }
 
@@ -72,7 +70,6 @@ h1, h2 {
   z-index: 10000;
   transition: all 0.3s ease;
 }
-
 .sticky-cta:hover {
   background-color: #15803d;
   transform: translateX(-50%) scale(1.05);
@@ -86,7 +83,34 @@ h1, h2 {
   background: rgba(0, 0, 0, 0.4);
   z-index: 40;
 }
-
 #menuOverlay.active {
   display: block;
+}
+
+/* ✅ Swiper Custom Styling */
+.swiper {
+  position: relative;
+  padding-bottom: 40px; /* Platz für Pagination */
+}
+.swiper-slide {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  text-align: center;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #16a34a;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #15803d;
+}
+.swiper-pagination-bullet {
+  background: #d1d5db;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background: #16a34a;
 }
