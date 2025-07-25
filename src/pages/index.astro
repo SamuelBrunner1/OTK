@@ -7,12 +7,12 @@ import SwiperInit from "../components/SwiperInit.astro";
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BioKosár – Frische Bio-Produkte direkt vom Bauernhof</title>
-  <meta name="description" content="Frische, regionale Bio-Produkte bequem online bestellen. Nachhaltig, regional und direkt vom Bauernhof." />
+  <title>BioKosár – Friss bio termékek közvetlenül a gazdaságból</title>
+  <meta name="description" content="Friss, helyi bio termékek egyszerű online rendelése. Fenntartható, regionális, közvetlenül a gazdaságból." />
 
   <!-- SEO & Social -->
   <meta property="og:title" content="BioKosár – Frische Bio-Produkte direkt vom Bauernhof" />
-  <meta property="og:description" content="Frische, regionale Bio-Produkte bequem online bestellen. Nachhaltig, regional und direkt vom Bauernhof." />
+  <meta property="og:description" content="Rendelj friss, helyi bio termékeket kényelmesen online – fenntarthatóan, közvetlenül a gazdáktól." />
   <meta property="og:image" content="/NAPRA_BILD.jpg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -34,16 +34,17 @@ import SwiperInit from "../components/SwiperInit.astro";
     </a>
 
     <!-- ✅ Navigation -->
-    <nav class="hidden md:flex space-x-6 lg:space-x-8 text-gray-700 text-base lg:text-lg font-medium">
-      <a href="#home" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">Home</a>
-      <a href="#about" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">Über uns</a>
-      <a href="#faq" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">FAQ</a>
-    </nav>
+  <nav class="hidden md:flex space-x-6 lg:space-x-8 text-gray-700 text-base lg:text-lg font-medium">
+  <a href="#home" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">Home</a>
+  <a href="#about" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">Rólunk</a>
+  <a href="#faq" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">FAQ</a>
+</nav>
+
 
     <!-- ✅ CTA Desktop -->
     <a href="https://shop.biokosar.hu" 
        class="hidden md:inline-block bg-green-600 text-white px-4 lg:px-5 py-2 rounded-lg font-semibold hover:bg-green-700 shadow-md hover:shadow-lg transition text-sm lg:text-base">
-       Jetzt bestellen
+       Rendelj most
     </a>
 
     <!-- ✅ Mobile Burger -->
@@ -58,12 +59,11 @@ import SwiperInit from "../components/SwiperInit.astro";
   <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-200 z-50 transform transition-all duration-300 ease-in-out">
     <nav class="flex flex-col items-center py-6 space-y-4 text-gray-700 text-lg font-medium">
       <a href="#home" class="hover:text-green-600 transition mobile-link">Home</a>
-      <a href="#about" class="hover:text-green-600 transition mobile-link">Über uns</a>
+      <a href="#about" class="hover:text-green-600 transition mobile-link">Rólunk</a>
       <a href="#faq" class="hover:text-green-600 transition mobile-link">FAQ</a>
       <a href="https://shop.biokosar.hu" 
          class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
-         Jetzt bestellen
-      </a>
+        Rendelj most      </a>
     </nav>
   </div>
 </header>
@@ -81,27 +81,28 @@ import SwiperInit from "../components/SwiperInit.astro";
   <div class="relative max-w-3xl px-6 z-10">
     <!-- Headline -->
     <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 text-gray-900 leading-tight">
-      Frisches Bio. <br class="hidden sm:block"/> Direkt vom Bauernhof.
+      Friss bio termékek. <br class="hidden sm:block"/> Közvetlenül a gazdaságból.
     </h1>
     
     <!-- Subtext -->
     <p class="text-lg sm:text-xl md:text-2xl mb-8 font-light text-gray-700 leading-relaxed">
-      Qualität, die man schmeckt. Bestelle heute – genieße morgen.
+      Minőség, amit megízlelhetsz. Rendelj ma – élvezd holnap!
     </p>
     
     <!-- CTA Button -->
     <a href="https://shop.biokosar.hu" 
        class="inline-block bg-green-600 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl hover:bg-green-700 transition-all duration-300">
-      🛒 Zum Shop
+      🛒 Ugrás a boltba
     </a>
   </div>
 </section>
 
 
+
 <!-- ✅ Über uns -->
 <section id="about" class="relative py-12 md:py-20 px-6 bg-[#F6FAF7]" data-animate>
   <div class="relative max-w-4xl mx-auto text-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 md:p-10">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Über uns</h2>
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Rólunk</h2>
     <p class="text-base md:text-lg leading-7 text-gray-700">
       A BioKosár friss, regionális bio termékeket hoz el közvetlenül a gazdaságból az otthonodba.
 Célunk a fenntartható mezőgazdaság támogatása és az egészséges táplálkozás könnyű elérhetővé tétele mindenki számára.
@@ -127,7 +128,7 @@ Minden vásárlásoddal a helyi gazdákat támogatod, és hozzájárulsz egy eg�
       <!-- Slide 1 -->
       <div class="scroll-snap-slide">
         <div class="flex justify-center mb-2 text-green-600">⭐⭐⭐⭐⭐</div>
-        <p class="text-lg italic mb-4">„Nagyszerű termékek és kiváló szolgáltatás – csak ajánlani tudom!”</p>
+        <p class="text-lg italic mb-4">„Nagyszerű termékek és kiváló szolgáltatás, csak ajánlani tudom!”</p>
         <span class="block font-semibold">– Max Mustermann</span>
       </div>
 
@@ -155,39 +156,39 @@ Minden vásárlásoddal a helyi gazdákat támogatod, és hozzájárulsz egy eg�
 <!-- ✅ FAQ -->
 <section id="faq" class="bg-[#F6FAF7] py-12 md:py-20 px-6" data-animate>
   <div class="max-w-3xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Häufige Fragen</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Gyakori kérdések</h2>
     <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg divide-y divide-gray-200 border border-gray-200">
       
-      <!-- ✅ Frage 1 -->
+      <!-- ✅ Kérdés 1 -->
       <details class="group p-6">
         <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
-          <span>Wie schnell wird geliefert?</span>
+          <span>Milyen gyorsan szállítotok?</span>
           <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
         </summary>
         <p class="mt-4 text-gray-600 leading-relaxed">
-          Wir liefern in der Regel innerhalb von 24 Stunden nach Bestellung, sodass deine Bio-Produkte immer frisch bei dir ankommen.
+          A rendeléstől számítva általában 24 órán belül kiszállítjuk a termékeket, hogy mindig frissen érkezzenek hozzád.
         </p>
       </details>
       
-      <!-- ✅ Frage 2 -->
+      <!-- ✅ Kérdés 2 -->
       <details class="group p-6">
         <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
-          <span>Sind alle Produkte wirklich bio?</span>
+          <span>Minden termék valóban bio?</span>
           <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
         </summary>
         <p class="mt-4 text-gray-600 leading-relaxed">
-          Ja! Alle Produkte stammen aus zertifizierter biologischer Landwirtschaft und werden von lokalen Bauernhöfen bezogen.
+          Igen! Minden termék tanúsított ökológiai gazdaságból származik, helyi termelőktől.
         </p>
       </details>
       
-      <!-- ✅ Neue Frage 3 -->
+      <!-- ✅ Kérdés 3 -->
       <details class="group p-6">
         <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
-          <span>Gibt es ein Abonnement?</span>
+          <span>Van előfizetéses lehetőség?</span>
           <span class="transition-transform group-open:rotate-180 text-gray-500">⌄</span>
         </summary>
         <p class="mt-4 text-gray-600 leading-relaxed">
-          Ja, du kannst ein wöchentliches oder monatliches Bio-Korb-Abo wählen – flexibel und jederzeit kündbar.
+          Igen, választhatsz heti vagy havi BioKosár előfizetést – rugalmasan, bármikor lemondható.
         </p>
       </details>     
     </div>
@@ -195,36 +196,53 @@ Minden vásárlásoddal a helyi gazdákat támogatod, és hozzájárulsz egy eg�
 </section>
 
 
+
 <!-- ✅ Sticky CTA -->
-<a href="https://shop.biokosar.hu" class="sticky-cta">Jetzt bestellen</a>
+<a href="https://shop.biokosar.hu" class="sticky-cta">Rendelj most</a>
 
 <!-- ✅ Footer -->
 <footer class="bg-gray-100 border-t border-gray-200 text-gray-600 text-sm">
   <div class="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-4 gap-8">
+    
+    <!-- BioKosár -->
     <div>
       <h3 class="font-semibold text-gray-800 mb-3">BioKosár</h3>
-      <p>Frische Bio-Produkte direkt vom Bauernhof – einfach online bestellen.</p>
+      <p>Friss bio termékek közvetlenül a gazdaságból – egyszerű online rendelés.</p>
     </div>
+    
+    <!-- Jogi információk -->
     <div>
-      <h3 class="font-semibold text-gray-800 mb-3">Rechtliches</h3>
+      <h3 class="font-semibold text-gray-800 mb-3">Jogi információk</h3>
       <ul>
-        <li><a href="/rechtliches" class="hover:text-green-700">Rechtliches</a></li>
+        <li><a href="/rechtliches" class="hover:text-green-700">Jogi információk</a></li>
       </ul>
     </div>
+    
+    <!-- Kapcsolat -->
     <div>
-      <h3 class="font-semibold text-gray-800 mb-3">Kontakt</h3>
-      <p>Email: <a href="mailto:info@biokosar.hu" class="hover:text-green-700">info@biokosar.hu</a></p>
-      <p>Tel: +36 30 123 4567</p>
+      <h3 class="font-semibold text-gray-800 mb-3">Kapcsolat</h3>
+      <p>E-mail: <a href="mailto:info@biokosar.hu" class="hover:text-green-700">info@biokosar.hu</a></p>
+      <p>Tel.: +36 30 123 4567</p>
     </div>
+    
+    <!-- Shop -->
     <div>
       <h3 class="font-semibold text-gray-800 mb-3">Shop</h3>
-      <a href="https://shop.biokosar.hu" class="hover:text-green-700">Zum Shop</a>
+      <a href="https://shop.biokosar.hu" class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
+        🛒 Rendelj most
+      </a>
     </div>
+    
   </div>
+  
+  <!-- ✅ Bottom Bar -->
   <div class="text-center text-xs text-gray-400 py-4 border-t border-gray-200">
-    © 2025 BioKosár. Alle Rechte vorbehalten.
+    © 2025 BioKosár. Minden jog fenntartva.
   </div>
 </footer>
+
+
+
 
 <!-- ✅ JS: Scroll Animation + Mobile Menu + Smart Sticky Header -->
 <script>
