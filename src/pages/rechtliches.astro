@@ -64,70 +64,80 @@ import "../styles/global.css";
   <!-- ✅ Content -->
   <main class="flex-grow max-w-4xl mx-auto px-6 py-16 leading-relaxed text-gray-800">
     
-    <!-- Impresszum -->
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 border-b border-gray-300 pb-2">Impresszum</h2>
-      <p class="text-lg leading-8 mb-16">
-        <strong>BioKosár Kft.</strong><br>
-        Minta utca 1.<br>
-        1234 Budapest<br><br>
-        E-mail: info@biokosar.hu<br>
-        Tel.: +36 30 123 4567<br>
-        Adószám: HU12345678<br>
-        Képviseli: Max Mustermann<br><br>
-      </p>
-    </section>
+<!-- Impresszum -->
+<section>
+  <h2 class="text-3xl font-semibold mb-4 border-b border-gray-300 pb-2">Impresszum</h2>
+  <p class="text-lg leading-8 mb-16">
+    <strong>BioKosár Kft.</strong><br>
+    1115 Budapest, Kelenföldi utca 38.<br><br>
+    E-mail: <a href="mailto:info@biokosar.hu" class="text-green-700 hover:underline">info@biokosar.hu</a><br>
+    Tel.: <a href="tel:+3613710112" class="text-green-700 hover:underline">+36 1 371 0112</a><br>
+    Adószám: HU13894331<br>
+    Cégjegyzékszám: 01-09-878687<br>
+    Képviseli: Kövesi Ferenc Ottó<br><br>
+  </p>
+</section>
 
-    <!-- Adatvédelem -->
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 border-b border-gray-300 pb-2">Adatvédelmi tájékoztató</h2>
-      <p class="text-lg leading-8 mb-16">
-        Az Ön adatait a GDPR előírásainak megfelelően kezeljük. Cookie-kat csak funkcionális célokra használunk.
-        Az Ön hozzájárulása nélkül adatokat nem adunk át harmadik félnek. Önnek joga van bármikor tájékoztatást kérni, törlést és visszavonást kezdeményezni.<br><br>
-      </p>
-    </section>
+<!-- Adatvédelem -->
+<section>
+  <h2 class="text-3xl font-semibold mb-4 border-b border-gray-300 pb-2">Adatvédelmi tájékoztató</h2>
+  <p class="text-lg leading-8 mb-16">
+    Az Ön adatait a GDPR előírásainak megfelelően kezeljük. Cookie-kat csak funkcionális célokra használunk.
+    Az Ön hozzájárulása nélkül adatokat nem adunk át harmadik félnek. Önnek joga van bármikor tájékoztatást kérni,
+    valamint kérheti adatainak törlését vagy a hozzájárulás visszavonását.<br><br>
+  </p>
+</section>
 
-    <!-- ÁSZF -->
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 border-b border-gray-300 pb-2">Általános Szerződési Feltételek (ÁSZF)</h2>
-      <p class="text-lg leading-8 mb-16">
-        ÁSZF-ünk szabályozza a fizetési feltételeket, szállítást, elállási jogot és felelősséget.
-        Kérjük, vegye figyelembe, hogy az online boltunk használatával Ön elfogadja ÁSZF-ünket.<br><br>
-      </p>
-    </section>
-  </main>
+<!-- ÁSZF -->
+<section>
+  <h2 class="text-3xl font-semibold mb-4 border-b border-gray-300 pb-2">Általános Szerződési Feltételek (ÁSZF)</h2>
+  <p class="text-lg leading-8 mb-16">
+    ÁSZF-ünk szabályozza a fizetési feltételeket, szállítást, elállási jogot és felelősséget.
+    Kérjük, vegye figyelembe, hogy az online boltunk használatával Ön elfogadja ÁSZF-ünket.<br><br>
+  </p>
+</section>
 
-  <!-- ✅ Footer -->
-  <footer class="bg-gray-50 border-t border-gray-200 text-gray-600 text-sm mt-auto">
-    <div class="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-4 gap-8">
-      <!-- Rólunk -->
-      <div>
-        <h3 class="font-semibold text-gray-800 mb-3">BioKosár</h3>
-        <p>Friss bio termékek közvetlenül a gazdaságból – egyszerű online rendelés.</p>
-      </div>
-      <!-- Jogi információk -->
-      <div>
-        <h3 class="font-semibold text-gray-800 mb-3">Jogi információk</h3>
-        <ul>
-          <li><a href="/jogi" class="hover:text-green-700">Jogi információk</a></li>
-        </ul>
-      </div>
-      <!-- Kapcsolat -->
-      <div>
-        <h3 class="font-semibold text-gray-800 mb-3">Kapcsolat</h3>
-        <p>E-mail: <a href="mailto:info@biokosar.hu" class="hover:text-green-700">info@biokosar.hu</a></p>
-        <p>Tel.: +36 30 123 4567</p>
-      </div>
-      <!-- Shop -->
-      <div>
-        <h3 class="font-semibold text-gray-800 mb-3">Shop</h3>
-        <a href="https://shop.biokosar.hu" class="hover:text-green-700">Online bolt</a>
-      </div>
+
+<!-- ✅ Footer -->
+<footer class="bg-gray-100 border-t border-gray-200 text-gray-600 text-sm">
+  <div class="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-4 gap-8">
+    
+    <!-- BioKosár -->
+    <div>
+      <h3 class="font-semibold text-gray-800 mb-3">BioKosár</h3>
+      <p>Friss bio termékek közvetlenül a gazdaságból – egyszerű online rendelés.</p>
     </div>
-    <div class="text-center text-xs text-gray-400 py-4 border-t border-gray-200">
-      © 2025 BioKosár. Minden jog fenntartva.
+    
+    <!-- Jogi információk -->
+    <div>
+      <h3 class="font-semibold text-gray-800 mb-3">Jogi információk</h3>
+      <ul>
+        <li><a href="/rechtliches" class="hover:text-green-700">Jogi információk</a></li>
+      </ul>
     </div>
-  </footer>
+    
+    <!-- Kapcsolat -->
+    <div>
+      <h3 class="font-semibold text-gray-800 mb-3">Kapcsolat</h3>
+      <p>E-mail: <a href="mailto:info@biokosar.hu" class="hover:text-green-700">info@biokosar.hu</a></p>
+      <p>Tel.: +36 30 123 4567</p>
+    </div>
+    
+  <div>
+  <h3 class="font-semibold text-gray-800 mb-3">Shop</h3>
+  <a href="https://shop.biokosar.hu" class="font-semibold text-gray-800 hover:text-green-700">
+    Online bolt
+  </a>
+</div>
+
+    
+  </div>
+  
+  <!-- ✅ Bottom Bar -->
+  <div class="text-center text-xs text-gray-400 py-4 border-t border-gray-200">
+    © 2025 BioKosár. Minden jog fenntartva.
+  </div>
+</footer>
 
 </body>
 </html>
