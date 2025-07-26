@@ -10,15 +10,51 @@ import "../styles/global.css";
 </head>
 <body class="bg-white text-gray-900 flex flex-col min-h-screen">
 
-  <!-- ✅ Header -->
-  <header class="fixed top-0 w-full bg-gradient-to-r from-green-100 to-white backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <a href="/" class="text-2xl font-bold text-gray-900 hover:text-green-700 transition">BioKosár</a>
-      <a href="https://shop.biokosar.hu" class="text-base text-gray-900 hover:text-green-700 transition">
-        Shop
+<!-- ✅ HEADER -->
+<header id="mainHeader" class="fixed top-0 w-full bg-gradient-to-r from-green-100 to-white backdrop-blur-md border-b border-gray-200 shadow-sm z-50 transition-transform duration-300">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
+    
+    <!-- ✅ Logo -->
+    <a href="/" class="flex items-center gap-3">
+      <img src="/NAPRA_BILD.jpg" alt="BioKosár Logo" class="h-10 sm:h-12 w-auto object-contain">
+      <span class="text-xl sm:text-2xl font-bold text-gray-900">BioKosár</span>
+    </a>
+
+    <!-- ✅ Navigation -->
+    <nav class="hidden md:flex space-x-6 lg:space-x-8 text-gray-700 text-base lg:text-lg font-medium">
+      <a href="/" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">Home</a>
+      <a href="/#about" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">Rólunk</a>
+      <a href="/#faq" class="hover:text-green-700 transition border-b-2 border-transparent hover:border-green-700">FAQ</a>
+    </nav>
+
+    <!-- ✅ CTA Desktop -->
+    <a href="https://shop.biokosar.hu" 
+       class="hidden md:inline-block bg-green-600 text-white px-4 lg:px-5 py-2 rounded-lg font-semibold hover:bg-green-700 shadow-md hover:shadow-lg transition text-sm lg:text-base">
+       Rendelj most
+    </a>
+
+    <!-- ✅ Mobile Burger -->
+    <button id="burgerBtn" class="md:hidden p-2 text-gray-700 hover:text-green-600 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- ✅ Mobile Menu -->
+  <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-200 z-50 transform transition-all duration-300 ease-in-out">
+    <nav class="flex flex-col items-center py-6 space-y-4 text-gray-700 text-lg font-medium">
+      <a href="/" class="hover:text-green-600 transition mobile-link">Home</a>
+      <a href="/#about" class="hover:text-green-600 transition mobile-link">Rólunk</a>
+      <a href="/#faq" class="hover:text-green-600 transition mobile-link">FAQ</a>
+      <a href="https://shop.biokosar.hu" 
+         class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
+        Rendelj most
       </a>
-    </div>
-  </header>
+    </nav>
+  </div>
+</header>
+
 
   <!-- ✅ Hero -->
   <section class="h-48 flex justify-center items-center text-center bg-gray-50 border-b border-gray-200 mt-20">
@@ -85,7 +121,7 @@ import "../styles/global.css";
       <!-- Shop -->
       <div>
         <h3 class="font-semibold text-gray-800 mb-3">Shop</h3>
-        <a href="https://shop.biokosar.hu" class="hover:text-green-700">Ugrás a boltba</a>
+        <a href="https://shop.biokosar.hu" class="hover:text-green-700">Online bolt</a>
       </div>
     </div>
     <div class="text-center text-xs text-gray-400 py-4 border-t border-gray-200">
