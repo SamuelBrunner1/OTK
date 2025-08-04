@@ -62,7 +62,7 @@ h1, h2 {
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #16a34a;
+  background-color: #a855f7; /* erotisch-lila */
   color: white;
   font-weight: 600;
   padding: 14px 24px;
@@ -72,7 +72,7 @@ h1, h2 {
   transition: all 0.3s ease;
 }
 .sticky-cta:hover {
-  background-color: #15803d;
+  background-color: #9333ea; /* dunkleres lila */
   transform: translateX(-50%) scale(1.05);
 }
 
